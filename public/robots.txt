@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://artificialsurveillance.com/sitemap.xml
+
+# Optimization for Googlebot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Optimization for Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
