@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: artificialsurveillance-web
+    restart: unless-stopped
+    volumes:
+      # Mount SSL certificates
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+      - ./nginx.ssl.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./logs:/var/log/nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - web-network
+
+networks:
+  web-network:
+    driver: bridge
