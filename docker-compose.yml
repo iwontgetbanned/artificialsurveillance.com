@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: artificialsurveillance-web
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      # Mount logs for monitoring
+      - ./logs:/var/log/nginx
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - web-network
+
+  # Optional: Add a reverse proxy for SSL termination
+  nginx-proxy:
+    image: jwilder/nginx-proxy:alpine
+    container_name: nginx-proxy
+    restart: unless-stopped
+    ports:
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./ssl-certs:/etc/nginx/certs:ro
+      - ./nginx-proxy/vhost.d:/etc/nginx/vhost.d
+      - ./nginx-proxy/html:/usr/share/nginx/html
+    environment:
+      - DEFAULT_HOST=artificialsurveillance.com
+    networks:
+      - web-network
+    profiles:
+      - ssl
+
+  # Optional: SSL certificate management
+  letsencrypt:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    container_name: letsencrypt
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./ssl-certs:/etc/nginx/certs
+      - ./nginx-proxy/vhost.d:/etc/nginx/vhost.d
+      - ./nginx-proxy/html:/usr/share/nginx/html
+    environment:
+      - NGINX_PROXY_CONTAINER=nginx-proxy
+    networks:
+      - web-network
+    profiles:
+      - ssl
+
+networks:
+  web-network:
+    driver: bridge
+
+volumes:
+  ssl-certs:
+  nginx-logs:
