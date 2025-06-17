@@ -70,8 +70,8 @@ const Footer = () => {
               <li className="flex items-start space-x-3">
                 <FiMapPin className="w-5 h-5 text-primary mt-0.5" />
                 <span className="text-accent-silver text-sm">
-                  3399 Fashion Square Blvd<br />
-                  Saginaw, MI 48603
+                  4720 South Graham Rd<br />
+                  Saint Charles, MI 48655
                 </span>
               </li>
               <li className="flex items-center space-x-3">
@@ -82,8 +82,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <FiMail className="w-5 h-5 text-primary" />
-                <a href="mailto:info@artificialsurveillance.com" className="text-accent-silver hover:text-primary transition-colors text-sm">
-                  info@artificialsurveillance.com
+                <a href="mailto:ferris@artificialsurveillance.com" className="text-accent-silver hover:text-primary transition-colors text-sm">
+                  ferris@artificialsurveillance.com
                 </a>
               </li>
             </ul>

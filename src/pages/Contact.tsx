@@ -277,8 +277,8 @@ const Contact = () => {
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold text-white mb-1">Our Headquarters</h3>
                     <p className="text-accent-silver">
-                      3399 Fashion Square Blvd<br />
-                      Saginaw, MI 48603
+                      4720 South Graham Rd<br />
+                      Saint Charles, MI 48655
                     </p>
                   </div>
                 </div>
@@ -292,8 +292,8 @@ const Contact = () => {
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold text-white mb-1">Phone</h3>
                     <p className="text-accent-silver">
-                      Main: (800) 555-1234<br />
-                      Support: (800) 555-5678
+                      Main: (989) 906-2334<br />
+                      Support: (989) 906-2334
                     </p>
                   </div>
                 </div>
@@ -307,8 +307,8 @@ const Contact = () => {
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold text-white mb-1">Email</h3>
                     <p className="text-accent-silver">
-                      Sales: sales@artificialsurveillance.com<br />
-                      Support: support@artificialsurveillance.com
+                      Sales: ferris@artificialsurveillance.com<br />
+                      Support: ferris@artificialsurveillance.com
                     </p>
                   </div>
                 </div>
@@ -370,7 +370,7 @@ const Contact = () => {
 
           <div className="rounded-xl overflow-hidden h-[400px] border border-primary/10">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2920.2546569970074!2d-83.95194992389618!3d43.467661265881724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8823e7ca4cc8bd27%3A0xbc1a8fec2bd214e9!2s3399%20Fashion%20Square%20Blvd%2C%20Saginaw%2C%20MI%2048603!5e0!3m2!1sen!2sus!4v1712963022520!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2955.1234567890123!2d-84.12345678901234!3d43.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s4720%20S%20Graham%20Rd%2C%20Saint%20Charles%2C%20MI%2048655!5e0!3m2!1sen!2sus!4v1712963022520!5m2!1sen!2sus"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -403,16 +403,16 @@ const Contact = () => {
                   <FiMapPin className="text-primary w-10 h-10" />
                 </div>
                 <div className="text-center md:text-left">
-                  <h3 className="text-2xl font-semibold text-white mb-3">Saginaw Office</h3>
-                  <p className="text-accent-silver text-lg mb-4">3399 Fashion Square Blvd, Saginaw, MI 48603</p>
+                  <h3 className="text-2xl font-semibold text-white mb-3">Saint Charles Office</h3>
+                  <p className="text-accent-silver text-lg mb-4">4720 South Graham Rd, Saint Charles, MI 48655</p>
                   <div className="flex flex-col md:flex-row gap-4 mt-4">
                     <div className="flex items-center justify-center md:justify-start">
                       <FiPhone className="w-5 h-5 text-primary mr-2" />
-                      <span className="text-accent-silver">(800) 555-1234</span>
+                      <span className="text-accent-silver">(989) 906-2334</span>
                     </div>
                     <div className="flex items-center justify-center md:justify-start">
                       <FiMail className="w-5 h-5 text-primary mr-2" />
-                      <span className="text-accent-silver">saginaw@artificialsurveillance.com</span>
+                      <span className="text-accent-silver">ferris@artificialsurveillance.com</span>
                     </div>
                   </div>
                 </div>
